@@ -45,6 +45,7 @@
     <Compile Include="InsertionSort.cs" />
     <Compile Include="MinMax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecursiveBinarySearch.cs" />
     <Compile Include="SequentialSearch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
