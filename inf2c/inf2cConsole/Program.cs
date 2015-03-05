@@ -11,6 +11,7 @@ namespace inf2cConsole
         static void Main(string[] args)
         {
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
+            BinarySearchTest binarySearchTest = new BinarySearchTest();
 
             // dont close the console
             Console.ReadLine();
