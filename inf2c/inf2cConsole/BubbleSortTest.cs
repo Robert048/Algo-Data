@@ -11,11 +11,23 @@ namespace inf2cConsole
     {
         public BubbleSortTest()
         {
+            var array = new int[] { 4, 9, 1, 50, 38, 29, 2, 5, 644, 453, 234 };
+            var sortedArray = BubbleSort.BubbleSorting<int>(array);
 
-            var testArray = new int[] { 1, 3, 5, 9, 29, 19, 2, 10, 203, 1, 3, 1 };
-            int[] number = BubbleSort.BubbleSort<int>(testArray);
+            var output = new StringBuilder();
 
+            foreach (var element in array)
+                output.Append(element + ", ");
+
+            Console.WriteLine("[BubbleSort] Unsorted array: " + output.ToString());
+            output.Clear();
+
+            foreach (var element in sortedArray)
+                output.Append(element + ", ");
+
+            Console.WriteLine("[BubbleSort] Sorted array: " + output.ToString());
         }
+
 
     }
 }

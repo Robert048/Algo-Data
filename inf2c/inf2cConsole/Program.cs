@@ -13,7 +13,7 @@ namespace inf2cConsole
         {
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
-
+            BubbleSortTest bubbleSort = new BubbleSortTest();
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
             BinarySearchTest binarySearchTest = new BinarySearchTest();
             MinMaxTest MinMax = new MinMaxTest();

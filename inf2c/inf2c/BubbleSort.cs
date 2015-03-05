@@ -9,7 +9,7 @@ namespace inf2c
     public class BubbleSort
     {
 
-        public static T[] BubbleSort<T>(T[] arr) where T : IComparable
+        public static T[] BubbleSorting<T>(T[] arr) where T : IComparable
         {
             int upper = arr.Length - 1;
             T temp;
