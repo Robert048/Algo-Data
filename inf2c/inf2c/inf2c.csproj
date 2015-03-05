@@ -42,6 +42,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="InsertionSort.cs" />
     <Compile Include="MinMax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SequentialSearch.cs" />
