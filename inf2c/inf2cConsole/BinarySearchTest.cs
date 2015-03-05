@@ -17,6 +17,10 @@ namespace inf2cConsole
             int indexFound = BinarySearch.binSearch(2, testArray);
             Console.WriteLine("[BinarySearch] 2 found at index: " + indexFound);
 
+            // search for 7 in testArray
+            int indexFound2 = RecursiveBinarySearch.RbinSearch(testArray, 7, 1, 10);
+            Console.WriteLine("[BinarySearch] 7 found at index: " + indexFound2);
+
         }
 
     }
