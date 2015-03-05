@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    class Timing
+    public class Timing
     {
-        public class Timing
-        {
             TimeSpan startingTime;
             TimeSpan duration;
             public Timing()
@@ -37,5 +35,4 @@ namespace inf2c
                 return duration;
             }
         }
-    }
 }
