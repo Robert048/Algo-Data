@@ -9,7 +9,6 @@ namespace inf2c
     class MinMax
     {
 
-        //testtsetsetsetsetsetsetsetsetsetsetsetsetsetsetsetestsetsetset
         static int FindMin(int[] arr)
         {
             int min = arr[0];
