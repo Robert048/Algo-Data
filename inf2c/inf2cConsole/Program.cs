@@ -1,4 +1,5 @@
 ﻿using System;
+using inf2c;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace inf2cConsole
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
 
             // dont close the console
+            MinMaxt MinMax = new MinMaxt();
             Console.ReadLine();
         }
     }
