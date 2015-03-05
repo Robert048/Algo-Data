@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    class MinMax
+    public class MinMax
     {
 
-        static int FindMin(int[] arr)
+        public static int FindMin(int[] arr)
         {
             int min = arr[0];
             for (int i = 0; i < arr.Length - 1; i++)
@@ -21,7 +21,7 @@ namespace inf2c
             return min;
         }
 
-        static int FindMax(int[] arr)
+        public static int FindMax(int[] arr)
         {
             int max = arr[0];
             for (int i = 0; i < arr.Length - 1; i++)

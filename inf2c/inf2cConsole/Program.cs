@@ -1,4 +1,5 @@
 ﻿using System;
+using inf2c;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace inf2cConsole
             BinarySearchTest binarySearchTest = new BinarySearchTest();
 
             // dont close the console
+            MinMaxt MinMax = new MinMaxt();
             Console.ReadLine();
         }
     }
