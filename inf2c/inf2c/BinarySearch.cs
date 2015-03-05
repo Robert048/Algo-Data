@@ -6,20 +6,9 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    class BinarySearch
+    public class BinarySearch
     {
-        static void Main(string[] args)
-        {   
-          Random random = new Random();
-            int[] arr = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int value = binSearch(5, arr);
-            Console.WriteLine(value);
-            Console.WriteLine("Done");
-            Console.Read();
-        }
-
-
-        static int binSearch(int value, int[] arr)
+        public static int binSearch(int value, int[] arr)
         {
             int upperBound, lowerBound, mid;
             upperBound = arr.Length - 1;
