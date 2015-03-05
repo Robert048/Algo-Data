@@ -16,10 +16,10 @@ namespace inf2cConsole
             var testArray = new int[] { 1, 3, 5, 9, 29, 19, 2, 10, 203, 1, 3, 1 };
 
             int min = MinMax.FindMin(testArray);
-            Console.WriteLine("Minimum number in array is: " + min);
+            Console.WriteLine("[MinMaxSearch] Minimum number in array is: " + min);
 
             int max = MinMax.FindMax(testArray);
-            Console.WriteLine("Maximum number in array is: " + max);
+            Console.WriteLine("[MinMaxSearch] Maximum number in array is: " + max);
         }
 
     }
