@@ -11,9 +11,13 @@ namespace inf2cConsole
     {
         static void Main(string[] args)
         {
+            //Sorting
+            InsertionSort insertionSort = new InsertionSort();
+
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
             BinarySearchTest binarySearchTest = new BinarySearchTest();
             MinMaxTest MinMax = new MinMaxTest();
+
             // dont close the console
             Console.ReadLine();
         }
