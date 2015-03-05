@@ -17,6 +17,7 @@ namespace inf2cConsole
             // search for 29 in testArray
             int indexFound = SequentialSearch.SeqSearch<int>(testArray, 29);
             Console.WriteLine("29 found at index: " + indexFound);
+
             // search for 4 in testArray
             indexFound = SequentialSearch.SeqSearch<int>(testArray, 4);
             Console.WriteLine("4 found at index: " + indexFound);
