@@ -8,6 +8,8 @@ namespace inf2c
 {
     class BinarySearch
     {
+        static void Main(string[] args)
+        {
           Random random = new Random();
             int[] arr = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int value = binSearch(5, arr);
@@ -42,8 +44,7 @@ namespace inf2c
                 }
             }
             return -1;
-        }static void Main(string[] args)
-        {
+        }
           
        }
 }
