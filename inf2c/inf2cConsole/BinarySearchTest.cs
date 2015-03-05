@@ -14,8 +14,8 @@ namespace inf2cConsole
             var testArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
             // search for 5 in testArray
-            int indexFound = BinarySearch.SeqSearch<int>(testArray, 29);
-            Console.WriteLine("[BinarySearch] 5 found at index: " + indexFound);
+            //int indexFound = BinarySearch.SeqSearch<int>(testArray, 29);
+            //Console.WriteLine("[BinarySearch] 5 found at index: " + indexFound);
 
         }
 

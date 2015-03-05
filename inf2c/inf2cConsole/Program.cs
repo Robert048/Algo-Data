@@ -14,7 +14,7 @@ namespace inf2cConsole
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
 
             // dont close the console
-            MinMaxt MinMax = new MinMaxt();
+            MinMaxTest MinMax = new MinMaxTest();
             Console.ReadLine();
         }
     }

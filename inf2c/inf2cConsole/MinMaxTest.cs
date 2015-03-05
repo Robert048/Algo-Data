@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace inf2cConsole
 {
-    class MinMaxt
+    class MinMaxTest
     {
 
-        public MinMaxt()
+        public MinMaxTest()
         {
 
             var testArray = new int[] { 1, 3, 5, 9, 29, 19, 2, 10, 203, 1, 3, 1 };
