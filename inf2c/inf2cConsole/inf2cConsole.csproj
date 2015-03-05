@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BubbleSortTest.cs" />
     <Compile Include="MinMaxTest.cs" />
     <Compile Include="BinarySearchTest.cs" />
     <Compile Include="Program.cs" />
