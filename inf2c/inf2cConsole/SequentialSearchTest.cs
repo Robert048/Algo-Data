@@ -16,16 +16,15 @@ namespace inf2cConsole
 
             // search for 29 in testArray
             int indexFound = SequentialSearch.SeqSearch<int>(testArray, 29);
-            Console.WriteLine("29 found at index: " + indexFound);
+            Console.WriteLine("[SequentialSearchTest] 29 found at index: " + indexFound);
 
             // search for 4 in testArray
             indexFound = SequentialSearch.SeqSearch<int>(testArray, 4);
-            Console.WriteLine("4 found at index: " + indexFound);
+            Console.WriteLine("[SequentialSearchTest] 4 found at index: " + indexFound);
 
             // Occurrence 2 with value 1
             indexFound = SequentialSearch.SeqSearchOccurrence<int>(testArray, 1, 2);
-            Console.WriteLine("1 with occurrence 2 found at index: " + indexFound);
-
+            Console.WriteLine("[SequentialSearchTest] 1 with occurrence 2 found at index: " + indexFound);
         }
     }
 }
