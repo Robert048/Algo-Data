@@ -12,7 +12,15 @@ namespace inf2cConsole
     {
         public CustomStackTest()
         {
+            CustomStack<int> stack = new CustomStack<int>();
             
+            for (int i = 0; i < 100; i++)
+            {
+                stack.push(i);
+            }
+
+            Console.WriteLine("[CustomStackTest] Item count: " + stack.count);
+            Console.WriteLine("[CustomStackTest] Last item: " + stack.pop().ToString());
         }
     }
 }

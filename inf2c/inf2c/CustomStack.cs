@@ -11,7 +11,7 @@ namespace inf2c
     /// Stack class using generics
     /// </summary>
     /// <typeparam name="T">Can be any object</typeparam>
-    class CustomStack<T> 
+    public class CustomStack<T> 
     {
         // custom index and using list with generics
         private int p_index;

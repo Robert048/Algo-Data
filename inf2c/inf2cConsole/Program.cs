@@ -1,5 +1,4 @@
 ﻿using System;
-using inf2c;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +13,14 @@ namespace inf2cConsole
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
             BubbleSortTest bubbleSort = new BubbleSortTest();
+
+            //Search
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
             BinarySearchTest binarySearchTest = new BinarySearchTest();
             MinMaxTest MinMax = new MinMaxTest();
+
+            // stack and queue
+            CustomStackTest customStackTest = new CustomStackTest();
 
             // dont close the console
             Console.ReadLine();
