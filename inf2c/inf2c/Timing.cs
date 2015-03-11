@@ -53,7 +53,7 @@ namespace inf2c
         {
             get
             {
-                return (double)(stopTime - startTime) / (double)freq;
+                return (double)(stopTime - startTime) / (double)frequence;
             }
         }
     }
