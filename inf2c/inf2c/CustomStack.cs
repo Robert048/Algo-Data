@@ -11,7 +11,7 @@ namespace inf2c
     /// Stack class using generics
     /// </summary>
     /// <typeparam name="T">Can be any object</typeparam>
-    class CustomStuck<T> 
+    class CustomStack<T> 
     {
         // custom index and using list with generics
         private int p_index;
@@ -20,7 +20,7 @@ namespace inf2c
         /// <summary>
         /// Custom stuck constructor
         /// </summary>
-        public CustomStuck()
+        public CustomStack()
         {
             list = new List<T>();
             p_index = -1;
@@ -30,7 +30,7 @@ namespace inf2c
         /// Creating new instance of list and set the index to -1, to the first element will be at index 0
         /// </summary>
         /// <param name="maxElements">max elements which can be added to the list</param>
-        public CustomStuck(int maxElements)
+        public CustomStack(int maxElements)
         {
             list = new List<T>(maxElements);
             p_index = -1;
