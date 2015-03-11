@@ -1,38 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace inf2c
 {
+    //http://www.codeproject.com/Articles/2635/High-Performance-Timer-in-C
     public class Timing
     {
-            TimeSpan startingTime;
-            TimeSpan duration;
-            public Timing()
-            {
-                startingTime = new TimeSpan(0);
-                duration = new TimeSpan(0);
-            }
-            public void StopTime() 
-            {
-                duration = Process.GetCurrentProcess().Threads[0].UserProcessorTime.Subtract(startingTime);
-            }
+        [DllImport("Kernel32.dll")]
+        private static extern bool QueryPerformanceCounter(
+            out long lpPerformanceCount);
 
-            public void startTime()
-            {
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-                startingTime =
-                Process.GetCurrentProcess().Threads[0].
-                UserProcessorTime;
-            }
+        [DllImport("Kernel32.dll")]
+        private static extern bool QueryPerformanceFrequency(
+            out long lpFrequency);
 
-            public TimeSpan Result()
+        private long startTime;
+        private long stopTime;
+        private long frequence;
+
+        public Timing()
+        {
+            startTime = 0;
+            stopTime = 0;
+            frequence = 0;
+
+            // check if counter is supported
+            if (QueryPerformanceFrequency(out frequence) == false)
             {
-                return duration;
+                throw new Win32Exception();
             }
         }
+
+        public void Start()
+        {
+            Thread.Sleep(0);
+            QueryPerformanceCounter(out startTime);
+        }
+
+        public void Stop()
+        {
+            QueryPerformanceCounter(out stopTime);
+        }
+
+        public double Duration
+        {
+            get
+            {
+                return (double)(stopTime - startTime) / (double)freq;
+            }
+        }
+    }
 }
