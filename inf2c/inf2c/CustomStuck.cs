@@ -18,10 +18,18 @@ namespace inf2c
         private List<T> list;
 
         /// <summary>
-        /// CustomStuck constructor
+        /// Custom stuck constructor
+        /// </summary>
+        public CustomStuck()
+        {
+            list = new List<T>();
+            p_index = -1;
+        }
+        /// <summary>
+        /// CustomStuck constructor with max. elements attribute
         /// Creating new instance of list and set the index to -1, to the first element will be at index 0
         /// </summary>
-        /// <param name="maxElements"></param>
+        /// <param name="maxElements">max elements which can be added to the list</param>
         public CustomStuck(int maxElements)
         {
             list = new List<T>(maxElements);

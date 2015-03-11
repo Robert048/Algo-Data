@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="CustomStuck.cs" />
     <Compile Include="InsertionSort.cs" />
     <Compile Include="MinMax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
