@@ -48,6 +48,16 @@ namespace inf2c
         }
 
         /// <summary>
+        /// Checks if T item contains in the list
+        /// </summary>
+        /// <param name="item">The object in list</param>
+        /// <returns>true if it contains in the list</returns>
+        public bool contains(T item)
+        {
+            return list.Contains(item);
+        }
+
+        /// <summary>
         /// Adds an item to the list
         /// </summary>
         /// <param name="item">The object which is added</param>
