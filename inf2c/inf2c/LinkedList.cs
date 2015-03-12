@@ -9,10 +9,14 @@ namespace inf2c
     public class LinkedList
     {
         private Node header;
+        private Node last;
+
         public LinkedList()
         {
-            header = new Node("header");
+            header = null;
+            last = null;
         }
+
         public Node Find(Object item)
         {
             Node current = new Node();
@@ -29,13 +33,27 @@ namespace inf2c
             Node current = new Node();
             Node newNode = new Node(newItem);
             current = Find(after);
+
+            newNode.Link = current.Link;
+            current.Link = newNode;
         }
 
         public void InsertFirst(Object newItem)
         {
-            Node current = new Node(newItem);
-            current.Link = header;
-            header.Link = current;
+            Node n = new Node();
+            n.Element = newItem;
+            n.Link = null;
+
+            if (last == null)
+            {
+                header = n;
+                last = n;
+            }
+            else
+            {
+                last.Link = n;
+                last = n;
+            }
         }
 
         private Node FindPrevious(Object n)
@@ -58,9 +76,10 @@ namespace inf2c
         {
             Node current = new Node();
             current = header;
-            while (current.Link != null)
+
+            while (current != null)
             {
-                Console.WriteLine(current.Link.Element);
+                Console.WriteLine("[LinkedListTest] " + current.Element);
                 current = current.Link;
             }
         }
