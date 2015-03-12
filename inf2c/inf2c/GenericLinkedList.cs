@@ -8,109 +8,60 @@ namespace inf2c
 {
     public class GenericNode<T>
     {
-        public T Element;
-        public GenericNode<T> Link;
+        private GenericNode<T> next;
+        private T data;
 
-        public GenericNode()
+        public GenericNode(T t)
         {
+            next = null;
+            data = t;
         }
-        //te
-        public GenericNode(T theElement)
-        {
-            Element = theElement;
-        }
-    }
 
-    public class InsertBeforeHeaderException : System.ApplicationException
-    {
-        public InsertBeforeHeaderException(string message) :
-            base(message)
+        public GenericNode<T> Next
         {
+            get { return next; }
+            set { next = value; }
+        }
+
+        public T Data
+        {
+            get { return data; }
+            set { data = value; }
         }
     }
 
     public class GenericLinkedList<T>
     {
-        private GenericNode<T> header;
+        private GenericNode<T> head;
 
         public GenericLinkedList()
         {
-            header = new GenericNode<T>("header");
+            head = null;
         }
 
-        public bool IsEmpty()
+        public void AddHead(T t)
         {
-            return (header.Link == null);
+            GenericNode<T> n = new GenericNode<T>(t);
+            n.Next = head;
+            head = n;
         }
 
-        public GenericNode<T> GetFirst() {
-            return header;
-        }
-
-        public void ShowList()
+        public void AddHead(GenericNode<T> t)
         {
-            GenericNode<T> current = header.Link;
-            while (!(current == null))
+            t.Next = head;
+            head = t;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            GenericNode<T> current = head;
+
+            while (current != null)
             {
-                Console.WriteLine(current.Element);
-                current = current.Link;
+                yield return current.Data;
+                current = current.Next;
             }
-        }
-    }
 
-    public class ListIter<T>
-    {
-        private GenericNode<T> current;
-        private GenericNode<T> previous;
-        private GenericLinkedList<T> theList;
-
-        public ListIter(GenericLinkedList<T> list)
-        {
-            theList = list;
-            current = theList.GetFirst();
-            previous = null;
-        }
-        public void NextLink()
-        {
-            previous = current;
-            current = current.Link;
-        }
-        public GenericNode<T> GetCurrent()
-        {
-            return current;
-        }
-        public void InsertBefore(T theElement)
-        {
-            GenericNode<T> newNode = new GenericNode<T>(theElement);
-            if (previous.Link == null)
-                throw new InsertBeforeHeaderException
-                ("Can't insert here.");
-            else
-            {
-                newNode.Link = previous.Link;
-                previous.Link = newNode;
-                current = newNode;
-            }
-        }
-        public void InsertAfter(T theElement)
-        {
-            GenericNode<T> newNode = new GenericNode<T>(theElement);
-            newNode.Link = current.Link;
-            current.Link = newNode;
-            NextLink();
-        }
-        public void Remove()
-        {
-            previous.Link = current.Link;
-        }
-        public void Reset()
-        {
-            current = theList.GetFirst();
-            previous = null;
-        }
-        public bool AtEnd()
-        {
-            return (current.Link == null);
         }
     }
 }
