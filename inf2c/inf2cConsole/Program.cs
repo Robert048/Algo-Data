@@ -24,6 +24,8 @@ namespace inf2cConsole
             CustomQueueTest customQueueTest = new CustomQueueTest();
             PriorityQueueTest priorityQueueTest = new PriorityQueueTest();
 
+            GenericLinkedListTest genericLinkedListTest = new GenericLinkedListTest();
+
             // dont close the console
             Console.ReadLine();
         }

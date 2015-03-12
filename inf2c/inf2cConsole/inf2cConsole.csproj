@@ -44,6 +44,7 @@
     <Compile Include="BubbleSortTest.cs" />
     <Compile Include="CustomQueueTest.cs" />
     <Compile Include="CustomStackTest.cs" />
+    <Compile Include="GenericLinkedListTest.cs" />
     <Compile Include="InsertionSortTest.cs" />
     <Compile Include="MinMaxTest.cs" />
     <Compile Include="BinarySearchTest.cs" />
