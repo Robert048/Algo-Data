@@ -31,6 +31,13 @@ namespace inf2c
             current = Find(after);
         }
 
+        public void InsertFirst(Object newItem)
+        {
+            Node current = new Node(newItem);
+            current.Link = header;
+            header.Link = current;
+        }
+
         private Node FindPrevious(Object n)
         {
             Node current = header;
