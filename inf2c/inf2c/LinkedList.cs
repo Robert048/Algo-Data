@@ -8,7 +8,7 @@ namespace inf2c
 {
     public class LinkedList
     {
-        protected Node header;
+        private Node header;
         public LinkedList()
         {
             header = new Node("header");
