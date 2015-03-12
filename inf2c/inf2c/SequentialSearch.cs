@@ -68,5 +68,39 @@ namespace inf2c
             // return -1 if there was no match
             return -1;
         }
+
+
+
+
+        public static int SeqSearchSOD<T>(T[] arr, T value) where T : IComparable
+        {
+            // search in the array
+            for (int index = 0; index < arr.Length; index++)
+            {
+                // 0 = The items are equal
+                if (arr[index].CompareTo(value) == 0)
+                {
+                    int index2 = index - 1;
+                    // give the index of found item back
+                    Swap<T>(ref index, ref index2);
+                    return index;
+                }
+            }
+
+            // return -1 if there was no match
+            return -1;
+        }
+
+        static void Swap<T>(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
     }
-}
+        
+
+
+    }
+

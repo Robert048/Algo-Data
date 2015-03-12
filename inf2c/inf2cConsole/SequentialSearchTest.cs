@@ -25,6 +25,11 @@ namespace inf2cConsole
             // Occurrence 2 with value 1
             indexFound = SequentialSearch.SeqSearchOccurrence<int>(testArray, 1, 2);
             Console.WriteLine("[SequentialSearchTest] 1 with occurrence 2 found at index: " + indexFound);
+
+            // swap 2 values
+            indexFound = SequentialSearch.SeqSearchSOD<int>(testArray, 203);
+            int indexFound2 = indexFound + 1;
+            Console.WriteLine("[SequentialSearchTest] swapped the indexes: " + indexFound + " and " + indexFound2);
         }
     }
 }
