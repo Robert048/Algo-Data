@@ -22,6 +22,7 @@ namespace inf2cConsole
             // stack and queue
             CustomStackTest customStackTest = new CustomStackTest();
             CustomQueueTest customQueueTest = new CustomQueueTest();
+            PriorityQueueTest priorityQueueTest = new PriorityQueueTest();
 
             // dont close the console
             Console.ReadLine();
