@@ -33,6 +33,7 @@ namespace inf2c
         public GenericLinkedList()
         {
             head = null;
+            last = null;
         }
 
         public int Count

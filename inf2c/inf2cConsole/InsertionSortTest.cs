@@ -13,7 +13,6 @@ namespace inf2cConsole
         public InsertionSortTest()
         {
             var array = new int[] { 4, 9, 1, 50, 38, 29, 2 };
-            var sortedArray = InsertionSort.InertionSort<int>(array);
 
             var output = new StringBuilder();
 
@@ -21,7 +20,9 @@ namespace inf2cConsole
                 output.Append(element + ", ");
 
             Console.WriteLine("[InsertionSortTest] Unsorted array: " + output.ToString());
-            output.Clear();
+
+            output = new StringBuilder();
+            var sortedArray = InsertionSort.InertionSort<int>(array);
 
             foreach (var element in sortedArray)
                 output.Append(element + ", ");
