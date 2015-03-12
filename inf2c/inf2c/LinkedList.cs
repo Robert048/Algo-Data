@@ -58,7 +58,7 @@ namespace inf2c
         {
             Node current = new Node();
             current = header;
-            while (!(current.Link == null))
+            while (current.Link != null)
             {
                 Console.WriteLine(current.Link.Element);
                 current = current.Link;
