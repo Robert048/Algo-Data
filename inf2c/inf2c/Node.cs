@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    class Node
+    public class Node
     {
         public Object Element;
         public Node Link;
