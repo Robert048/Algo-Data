@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="BucketHash.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
     <Compile Include="GenericLinkedList.cs" />

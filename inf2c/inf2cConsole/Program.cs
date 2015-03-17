@@ -27,6 +27,9 @@ namespace inf2cConsole
             LinkedListTest linkedListTest = new LinkedListTest();
             GenericLinkedListTest genericLinkedListTest = new GenericLinkedListTest();
 
+            // Hashing
+            BucketHashTest bucketHashTest = new BucketHashTest();
+
             // dont close the console
             Console.ReadLine();
         }
