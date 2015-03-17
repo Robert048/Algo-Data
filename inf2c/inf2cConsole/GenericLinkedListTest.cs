@@ -12,13 +12,20 @@ namespace inf2cConsole
     {
         public GenericLinkedListTest()
         {
-            GenericNode<string> node = new GenericNode<string>("Johan");
+            GenericNode<string> node = new GenericNode<string>("Vincent");
 
             GenericLinkedList<string> names = new GenericLinkedList<string>();
             names.Add("Mike");
             names.Add("Paul");
             names.AddAfter("Piet", "Mike");
             names.Add(node);
+            names.Add("Johan");
+            names.Add("Martin");
+
+            string removedFirst = names.RemoveFirst();
+            Console.WriteLine("[GenericLinkedListTest] Removed first element: " + removedFirst);
+            string removedLast = names.RemoveLast();
+            Console.WriteLine("[GenericLinkedListTest] Removed last element: " + removedLast);
 
             names.OutputList();
         }

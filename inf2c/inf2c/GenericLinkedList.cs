@@ -8,31 +8,30 @@ namespace inf2c
 {
     public class GenericNode<T> where T : IComparable
     {
-        public object Element;
-        public GenericNode<T> Link;
+        public T Element;
+        public GenericNode<T> Next;
 
         public GenericNode()
         {
-            Element = null;
-            Link = null;
+            Next = null;
         }
 
         public GenericNode(T TheElement)
         {
             Element = TheElement;
-            Link = null;
+            Next = null;
         }
     }
 
     public class GenericLinkedList<T> where T : IComparable
     {
-        private GenericNode<T> head;
+        private GenericNode<T> first;
         private GenericNode<T> last;
         private int mcount;
 
         public GenericLinkedList()
         {
-            head = null;
+            first = null;
             last = null;
         }
 
@@ -44,11 +43,11 @@ namespace inf2c
         public GenericNode<T> Find(T item)
         {
             GenericNode<T> current = new GenericNode<T>();
-            current = head;
+            current = first;
 
-            while (!object.Equals(current.Element, item) && current.Link != null)
+            while (!object.Equals(current.Element, item) && current.Next != null)
             {
-                current = current.Link;
+                current = current.Next;
             }
 
             return current;
@@ -57,28 +56,28 @@ namespace inf2c
         public void OutputList()
         {
             GenericNode<T> node = new GenericNode<T>();
-            node = head;
+            node = first;
 
             while (node != null)
             {
                 Console.WriteLine("[GenericLinkedListTest] " + node.Element);
-                node = node.Link;
+                node = node.Next;
             }
         }
 
         public void Add(GenericNode<T> element)
         {
             GenericNode<T> n = element;
-            n.Link = null;
+            n.Next = null;
 
             if (last == null)
             {
-                head = n;
+                first = n;
                 last = n;
             }
             else
             {
-                last.Link = n;
+                last.Next = n;
                 last = n;
             }
 
@@ -89,16 +88,16 @@ namespace inf2c
         {
             GenericNode<T> n = new GenericNode<T>();
             n.Element = element;
-            n.Link = null;
+            n.Next = null;
 
             if (last == null)
             {
-                head = n;
+                first = n;
                 last = n;
             }
             else
             {
-                last.Link = n;
+                last.Next = n;
                 last = n;
             }
 
@@ -112,10 +111,50 @@ namespace inf2c
 
             current = Find(afterElement);
 
-            newNode.Link = current.Link;
-            current.Link = newNode;
+            newNode.Next = current.Next;
+            current.Next = newNode;
 
             mcount++;
+        }
+
+        public T RemoveFirst()
+        {
+            T removeItem = first.Element;
+
+            if (first == last)
+            {
+                first = last;
+                last = null;
+            }
+            else
+            {
+                first = first.Next;
+            }
+
+            return removeItem;
+        }
+
+        public T RemoveLast()
+        {
+            T removeItem = last.Element;
+
+            if (first == last)
+            {
+                first = last;
+                last = null;
+            }
+            else
+            {
+                GenericNode<T> current = first;
+                while (current.Next != last)
+                {
+                    current = current.Next;
+                }
+                last = current;
+                current.Next = null;
+            }
+
+            return removeItem;
         }
     }
 }

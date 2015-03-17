@@ -25,6 +25,8 @@ namespace inf2c
         private long stopTime;
         private long frequence;
 
+        private object _lock = new object();
+
         public Timing()
         {
             startTime = 0;
@@ -41,12 +43,19 @@ namespace inf2c
         public void Start()
         {
             Thread.Sleep(0);
-            QueryPerformanceCounter(out startTime);
+
+            lock (_lock)
+            {
+                QueryPerformanceCounter(out startTime);
+            }
         }
 
         public void Stop()
         {
-            QueryPerformanceCounter(out stopTime);
+            lock (_lock)
+            {
+                QueryPerformanceCounter(out stopTime);
+            }
         }
 
         public double Duration
