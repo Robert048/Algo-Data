@@ -9,7 +9,9 @@ namespace inf2cConsole
     class Program
     {
         static void Main(string[] args)
+        
         {
+
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
             BubbleSortTest bubbleSort = new BubbleSortTest();
@@ -26,6 +28,10 @@ namespace inf2cConsole
 
             LinkedListTest linkedListTest = new LinkedListTest();
             GenericLinkedListTest genericLinkedListTest = new GenericLinkedListTest();
+
+            //BinarySearchTree
+            BinarySearchTreeTest binarySearchTreeTest = new BinarySearchTreeTest();
+
 
             // dont close the console
             Console.ReadLine();
