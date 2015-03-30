@@ -46,6 +46,7 @@
     <Compile Include="BucketHashTest.cs" />
     <Compile Include="CustomQueueTest.cs" />
     <Compile Include="CustomStackTest.cs" />
+    <Compile Include="DoublyLinkedListTest.cs" />
     <Compile Include="GenericLinkedListTest.cs" />
     <Compile Include="InsertionSortTest.cs" />
     <Compile Include="IteratorTest.cs" />
