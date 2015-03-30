@@ -13,7 +13,6 @@ namespace inf2cConsole
         {
             LinkedList myList = new LinkedList();
             Iterator iter = new Iterator(myList);
-            string value;
             try
             {
                 iter.InsertAfter("David");
@@ -27,10 +26,9 @@ namespace inf2cConsole
                 iter.InsertAfter("Mayo");
                 iter.InsertAfter("Clayton");
             }
-            catch (InsertBeforeHeaderException e)
+            catch (Node.InsertBeforeHeaderException e)
             {
-                Console.WriteLine();
-                throw;
+                Console.WriteLine(e.Message);
             }
         }
     }
