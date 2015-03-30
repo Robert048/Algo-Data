@@ -8,13 +8,13 @@ namespace inf2c
 {
     public class NodeBin<T>
     {
-        public int data;
-        public NodeBin<T> left;
-        public NodeBin<T> right;
+        public int Data;
+        public NodeBin<T> Left;
+        public NodeBin<T> Right;
 
         public void DisplayNode()
         {
-            Console.Write(data);
+            Console.Write(Data);
             Console.Write(",");
 
         }
