@@ -18,6 +18,7 @@ namespace inf2cConsole
             names.InsertFirst("Mike");
             names.InsertLast("Paul");
             names.Insert("Hakob", "Mike");
+            names.InsertFirst(node);
 
             names.PrintList();
             names.PrintReverse();
