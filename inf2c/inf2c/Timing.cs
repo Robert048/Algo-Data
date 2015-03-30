@@ -42,8 +42,6 @@ namespace inf2c
 
         public void Start()
         {
-            Thread.Sleep(0);
-
             lock (_lock)
             {
                 QueryPerformanceCounter(out startTime);

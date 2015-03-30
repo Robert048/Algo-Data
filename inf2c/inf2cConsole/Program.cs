@@ -10,6 +10,9 @@ namespace inf2cConsole
     {
         static void Main(string[] args)
         {
+            inf2c.Timing timing = new inf2c.Timing();
+            timing.Start();
+
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
             BubbleSortTest bubbleSort = new BubbleSortTest();
@@ -29,6 +32,9 @@ namespace inf2cConsole
 
             // Hashing
             BucketHashTest bucketHashTest = new BucketHashTest();
+
+            timing.Stop();
+            Console.WriteLine("TIMER TIME: " + timing.Duration);
 
             // dont close the console
             Console.ReadLine();
