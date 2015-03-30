@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="BubbleSortTest.cs" />
     <Compile Include="BucketHashTest.cs" />
     <Compile Include="CustomQueueTest.cs" />

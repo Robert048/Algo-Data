@@ -21,5 +21,13 @@ namespace inf2c
             Element = theElement;
             Link = null;
         }
+
+        public class InsertBeforeHeaderExeption : System.ApplicationException
+        {
+            public InsertBeforeHeaderExeption(string message) : base(message)
+            {
+
+            }
+        }
     }
 }
