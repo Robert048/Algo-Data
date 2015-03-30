@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
+    /// <summary>
+    /// A LinkedList is a data structure of a group of Nodes. These Nodes together represent a sequence.
+    /// </summary>
     public class LinkedList
     {
         private Node header;
@@ -17,6 +20,11 @@ namespace inf2c
             last = null;
         }
 
+        /// <summary>
+        /// Uses the class "Node.cs"
+        /// </summary>
+        /// <param name="item">Inserted object to find</param>
+        /// <returns></returns>
         public Node Find(Object item)
         {
             Node current = new Node();
@@ -28,6 +36,11 @@ namespace inf2c
             return current;
         }
 
+        /// <summary>
+        /// Method to add a new Node
+        /// </summary>
+        /// <param name="newItem">The Node to insert</param>
+        /// <param name="after">Insert the new Node after the "after"</param>
         public void Insert(Object newItem, Object after)
         {
             Node current = new Node();
@@ -38,6 +51,10 @@ namespace inf2c
             current.Link = newNode;
         }
 
+        /// <summary>
+        /// Insert a Node on the first place.
+        /// </summary>
+        /// <param name="newItem"></param>
         public void InsertFirst(Object newItem)
         {
             Node n = new Node();
@@ -56,6 +73,11 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Method to find the previous node.
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         private Node FindPrevious(Object n)
         {
             Node current = header;
@@ -65,6 +87,10 @@ namespace inf2c
             return current;
         }
 
+        /// <summary>
+        /// Method to remove a node
+        /// </summary>
+        /// <param name="n"></param>
         public void Remove(Object n)
         {
             Node p = FindPrevious(n);
