@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    public class BinarySearchTree
+    public class BinarySearchTree<T>where T : IComparable
     {
-        public NodeBin root;
+        public NodeBin<T> root;
 
         public BinarySearchTree()
         {
             root = null;
         }
 
-        public void InOrder(NodeBin theRoot)
+        public void InOrder(NodeBin<T> theRoot)
         {
             if (!(theRoot == null))
             {
@@ -25,18 +25,38 @@ namespace inf2c
             }
         }
 
+        public void preOrder(NodeBin<T> theRoot)
+        {
+            if (!(theRoot == null))
+            {
+                theRoot.DisplayNode();
+                preOrder(theRoot.left);
+                preOrder(theRoot.right);
+            }
+        }
+
+        public void PostOrder(NodeBin<T> theRoot)
+        {
+            if (!(theRoot == null))
+            {
+                PostOrder(theRoot.left);
+                PostOrder(theRoot.right);
+                theRoot.DisplayNode();
+            }
+        }
+
         public void Insert(int i)
         {
-            NodeBin newNode = new NodeBin();
+            NodeBin<T> newNode = new NodeBin<T>();
             newNode.data = i;
             if (root == null)
-            {
+            
                 root = newNode;
-            }
+            
             else
             {
-                NodeBin current = root;
-                NodeBin parent;
+                NodeBin<T> current = root;
+                NodeBin<T> parent;
                 while (true)
                 {
                     parent = current;
@@ -48,10 +68,10 @@ namespace inf2c
                             parent.left = newNode;
                             break;
                         }
-                        else
-                        {
-                            current = current.left;
-                        }
+                        //else
+                        //{
+                        //    current = current.left;
+                        //}
                     }
                     else
                     {
@@ -61,10 +81,7 @@ namespace inf2c
                             parent.right = newNode;
                             break;
                         }
-                        else
-                        {
 
-                        }
                     }
                 }
             }

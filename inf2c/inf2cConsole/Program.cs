@@ -16,6 +16,7 @@ namespace inf2cConsole
             inf2c.Timing timing = new inf2c.Timing();
             timing.Start();
 
+
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
             BubbleSortTest bubbleSort = new BubbleSortTest();
@@ -24,6 +25,8 @@ namespace inf2cConsole
             SequentialSearchTest sequentialTest = new SequentialSearchTest();
             BinarySearchTest binarySearchTest = new BinarySearchTest();
             MinMaxTest MinMax = new MinMaxTest();
+            BinarySearchTreeTest binarySearchTree = new BinarySearchTreeTest();
+
 
             // stack and queue
             CustomStackTest customStackTest = new CustomStackTest();

@@ -11,19 +11,26 @@ namespace inf2cConsole
     {
         public BinarySearchTreeTest()
         {
-            Console.WriteLine("gagasdg");
-            BinarySearchTree nums = new BinarySearchTree();
-            nums.Insert(9);
-           // nums.Insert(45);
-           // nums.Insert(16);
-           // nums.Insert(37);
+            BinarySearchTree<int> nums = new BinarySearchTree<int>();
+            nums.Insert(23);
+            nums.Insert(45);
+            nums.Insert(16);
+            nums.Insert(37);
             nums.Insert(3);
-           // nums.Insert(99);
-            nums.Insert(8);
-            nums.Insert(1);
+            nums.Insert(99);
+            nums.Insert(22);
 
-            Console.WriteLine("Inorder traversal:"); 
+            Console.Write("[BinarySearchTree(PreOrder traversal):]");
+            nums.preOrder(nums.root);
+            Console.WriteLine(" ");
+
+            Console.Write("[BinarySearchTree(InOrder traversal):]");
             nums.InOrder(nums.root);
+            Console.WriteLine(" ");
+
+            Console.Write("[BinarySearchTree(PostOrder traversal):]");
+            nums.PostOrder(nums.root);
+            Console.WriteLine(" ");
         }
     }
 }

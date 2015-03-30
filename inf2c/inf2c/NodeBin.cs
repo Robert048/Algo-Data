@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    public class NodeBin
+    public class NodeBin<T>
     {
         public int data;
-        public NodeBin left;
-        public NodeBin right;
+        public NodeBin<T> left;
+        public NodeBin<T> right;
 
         public void DisplayNode()
         {
-            Console.WriteLine(data);
+            Console.Write(data);
+            Console.Write(",");
+
         }
 
     }
