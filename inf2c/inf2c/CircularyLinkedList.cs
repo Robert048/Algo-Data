@@ -8,10 +8,14 @@ namespace inf2c
 {
     class CircularyLinkedList<T> where T : IComparable
     {
+        //fields
         protected GenericNode<T> current;
         protected GenericNode<T> header;
         private int count;
 
+        /// <summary>
+        /// constructor for circulary linked list
+        /// </summary>
         public CircularyLinkedList()
         {
             count = 0;
@@ -19,11 +23,17 @@ namespace inf2c
             header.Next = header;
         }
 
+        /// <summary>
+        /// make the list empty
+        /// </summary>
         public void MakeEmpty()
         {
             header.Next = null;
         }
 
+        /// <summary>
+        /// print the linked list
+        /// </summary>
         public void PrintList()
         {
             GenericNode<T> current = new GenericNode<T>();
@@ -35,6 +45,11 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// find the previous node
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public GenericNode<T> FindPrevious(T n)
         {
             GenericNode<T> current = header;
@@ -45,6 +60,11 @@ namespace inf2c
             return current;
         }
 
+        /// <summary>
+        /// find a node
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public GenericNode<T> Find(T n)
         {
             GenericNode<T> current = new GenericNode<T>();
@@ -56,6 +76,10 @@ namespace inf2c
             return current;
         }
 
+        /// <summary>
+        /// remove a node
+        /// </summary>
+        /// <param name="n"></param>
         public void Remove(T n)
         {
             GenericNode<T> current = FindPrevious(n);
@@ -66,6 +90,11 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// insert a node
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <param name="n2"></param>
         public void Insert(T n1, T n2)
         {
             GenericNode<T> current = new GenericNode<T>();
@@ -76,6 +105,10 @@ namespace inf2c
             count++;
         }
 
+        /// <summary>
+        /// insert a node in the first position
+        /// </summary>
+        /// <param name="n"></param>
         public void InsertFirst(T n)
         {
             GenericNode<T> current = new GenericNode<T>(n);
@@ -84,6 +117,11 @@ namespace inf2c
             count++;
         }
 
+        /// <summary>
+        /// search a node with a number
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public GenericNode<T> Search(int n)
         {
             GenericNode<T> current = header.Next;
