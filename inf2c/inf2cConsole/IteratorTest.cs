@@ -11,8 +11,8 @@ namespace inf2cConsole
     {
         public IteratorTest()
         {
-            LinkedList myList = new LinkedList();
-            Iterator iter = new Iterator(myList);
+            GenericLinkedList<string> myList = new GenericLinkedList<string>();
+            Iterator<string> iter = new Iterator<string>(myList);
             try
             {
                 iter.InsertAfter("David");

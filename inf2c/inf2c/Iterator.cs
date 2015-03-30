@@ -7,13 +7,13 @@ using inf2c;
 
 namespace inf2c
 {
-    public class Iterator
+    public class Iterator<T> where T : IComparable
     {
-        private Node current;
-        private Node previous;
-        LinkedList theList;
+        private GenericNode<T> current;
+        private GenericNode<T> previous;
+        private GenericLinkedList<T> theList;
 
-        public Iterator(LinkedList list)
+        public Iterator(GenericLinkedList<T> list)
         {
             theList = list;
             current = theList.getFirst();
@@ -23,40 +23,40 @@ namespace inf2c
         public void NextLink()
         {
             previous = current;
-            current = current.Link;
+            current = current.Next;
         }
 
-        public Node GetCurrent()
+        public GenericNode<T> GetCurrent()
         {
             return current;
         }
 
-        public void InsertBefore(Object theElement)
+        public void InsertBefore(T theElement)
         {
-            Node newNode = new Node(theElement);
-            if (previous.Link == null)
+            GenericNode<T> newNode = new GenericNode<T>(theElement);
+            if (previous.Next == null)
             {
                 throw new Node.InsertBeforeHeaderException("Can't insert here");
             }
             else
             {
-                newNode.Link = previous.Link;
-                previous.Link = newNode;
+                newNode.Next = previous.Next;
+                previous.Next = newNode;
                 current = newNode;
             }
         }
 
-        public void InsertAfter(Object theElement)
+        public void InsertAfter(T theElement)
         {
-            Node newNode = new Node(theElement);
-            newNode.Link = current.Link;
-            current.Link = newNode;
+            GenericNode<T> newNode = new GenericNode<T>(theElement);
+            newNode.Next = current.Next;
+            current.Next = newNode;
             NextLink();
         }
 
         public void Remove()
         {
-            previous.Link = current.Link;
+            previous.Next = current.Next;
         }
 
         public void Reset()
@@ -67,7 +67,7 @@ namespace inf2c
 
         public bool AtEnd()
         {
-            return (current.Link == null);
+            return (current.Next == null);
         }
     }
     
