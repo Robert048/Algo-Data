@@ -12,6 +12,11 @@ namespace inf2cConsole
         {
             Console.Title = "inf2c dll";
 
+            //duidelijk console kleuren
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+
             // starting the query performance counter
             inf2c.Timing timing = new inf2c.Timing();
             timing.Start();
