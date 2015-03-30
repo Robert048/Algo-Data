@@ -50,6 +50,7 @@
     <Compile Include="GenericLinkedList.cs" />
     <Compile Include="InsertionSort.cs" />
     <Compile Include="Iterator.cs" />
+    <Compile Include="LinearHash.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="MinMax.cs" />
     <Compile Include="Node.cs" />
