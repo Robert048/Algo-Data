@@ -10,6 +10,9 @@ namespace inf2cConsole
     {
         static void Main(string[] args)
         {
+            Console.Title = "inf2c dll";
+
+            // starting the query performance counter
             inf2c.Timing timing = new inf2c.Timing();
             timing.Start();
 

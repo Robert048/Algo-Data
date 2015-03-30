@@ -13,12 +13,12 @@ namespace inf2cConsole
     {
         public BucketHashTest()
         {
-            BucketHash<string> names = new BucketHash<string>(4);
+            BucketHash<string> names = new BucketHash<string>(5);
 
             names.Insert("Paul");
             names.Insert("Piet");
             names.Insert("Johan");
-
+            names.Insert("Mike");
             names.Remove("Paul");
 
             names.Output();
