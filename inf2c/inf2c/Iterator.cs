@@ -36,7 +36,7 @@ namespace inf2c
             Node newNode = new Node(theElement);
             if (previous.Link == null)
             {
-                throw new Node.InsertBeforeHeaderExeption("Can't insert here");
+                throw new Node.InsertBeforeHeaderException("Can't insert here");
             }
             else
             {

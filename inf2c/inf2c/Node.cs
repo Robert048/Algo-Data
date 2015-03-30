@@ -22,9 +22,9 @@ namespace inf2c
             Link = null;
         }
 
-        public class InsertBeforeHeaderExeption : System.ApplicationException
+        public class InsertBeforeHeaderException : System.ApplicationException
         {
-            public InsertBeforeHeaderExeption(string message) : base(message)
+            public InsertBeforeHeaderException(string message) : base(message)
             {
 
             }
