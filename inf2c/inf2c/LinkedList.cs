@@ -88,6 +88,15 @@ namespace inf2c
         }
 
         /// <summary>
+        /// return the first node
+        /// </summary>
+        /// <returns>first node</returns>
+        public Node getFirst()
+        {
+            return header;
+        }
+
+        /// <summary>
         /// Method to remove a node
         /// </summary>
         /// <param name="n"></param>
@@ -109,6 +118,5 @@ namespace inf2c
                 current = current.Link;
             }
         }
-
     }
 }
