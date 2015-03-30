@@ -46,6 +46,7 @@
     <Compile Include="CircularyLinkedList.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
+    <Compile Include="DoublyLinkedList.cs" />
     <Compile Include="GenericLinkedList.cs" />
     <Compile Include="InsertionSort.cs" />
     <Compile Include="Iterator.cs" />
