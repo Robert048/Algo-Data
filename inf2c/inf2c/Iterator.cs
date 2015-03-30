@@ -9,10 +9,15 @@ namespace inf2c
 {
     public class Iterator<T> where T : IComparable
     {
+        // fields
         private GenericNode<T> current;
         private GenericNode<T> previous;
         private GenericLinkedList<T> theList;
 
+        /// <summary>
+        /// initialize list
+        /// </summary>
+        /// <param name="list"></param>
         public Iterator(GenericLinkedList<T> list)
         {
             theList = list;
@@ -20,17 +25,28 @@ namespace inf2c
             previous = null;
         }
 
+        /// <summary>
+        /// go the next link
+        /// </summary>
         public void NextLink()
         {
             previous = current;
             current = current.Next;
         }
 
+        /// <summary>
+        /// get the current node
+        /// </summary>
+        /// <returns></returns>
         public GenericNode<T> GetCurrent()
         {
             return current;
         }
 
+        /// <summary>
+        /// insert a new node before the current node
+        /// </summary>
+        /// <param name="theElement"></param>
         public void InsertBefore(T theElement)
         {
             GenericNode<T> newNode = new GenericNode<T>(theElement);
@@ -46,6 +62,10 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// insert a new node after the gven node
+        /// </summary>
+        /// <param name="theElement"></param>
         public void InsertAfter(T theElement)
         {
             GenericNode<T> newNode = new GenericNode<T>(theElement);
@@ -54,17 +74,27 @@ namespace inf2c
             NextLink();
         }
 
+        /// <summary>
+        /// remove the node from the list 
+        /// </summary>
         public void Remove()
         {
             previous.Next = current.Next;
         }
 
+        /// <summary>
+        /// return to the first node
+        /// </summary>
         public void Reset()
         {
             current = theList.getFirst();
             previous = null;
         }
 
+        /// <summary>
+        /// bool if the end is reached
+        /// </summary>
+        /// <returns></returns>
         public bool AtEnd()
         {
             return (current.Next == null);
