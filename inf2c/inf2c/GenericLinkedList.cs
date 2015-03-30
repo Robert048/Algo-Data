@@ -222,5 +222,14 @@ namespace inf2c
 
             return removeItem;
         }
+
+        /// <summary>
+        /// return the first node
+        /// </summary>
+        /// <returns>first node</returns>
+        public GenericNode<T> getFirst()
+        {
+            return first;
+        }
     }
 }
