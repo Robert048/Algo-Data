@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="BubbleSortTest.cs" />
+    <Compile Include="BucketHashTest.cs" />
     <Compile Include="CustomQueueTest.cs" />
     <Compile Include="CustomStackTest.cs" />
     <Compile Include="GenericLinkedListTest.cs" />

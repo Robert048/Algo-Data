@@ -9,8 +9,9 @@ namespace inf2cConsole
     class Program
     {
         static void Main(string[] args)
-        
         {
+            inf2c.Timing timing = new inf2c.Timing();
+            timing.Start();
 
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
@@ -29,9 +30,11 @@ namespace inf2cConsole
             LinkedListTest linkedListTest = new LinkedListTest();
             GenericLinkedListTest genericLinkedListTest = new GenericLinkedListTest();
 
-            //BinarySearchTree
-            BinarySearchTreeTest binarySearchTreeTest = new BinarySearchTreeTest();
+            // Hashing
+            BucketHashTest bucketHashTest = new BucketHashTest();
 
+            timing.Stop();
+            Console.WriteLine("TIMER TIME: " + timing.Duration);
 
             // dont close the console
             Console.ReadLine();
