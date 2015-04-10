@@ -50,6 +50,7 @@
     <Compile Include="GenericLinkedListTest.cs" />
     <Compile Include="InsertionSortTest.cs" />
     <Compile Include="IteratorTest.cs" />
+    <Compile Include="LinearHashTest.cs" />
     <Compile Include="LinkedListTest.cs" />
     <Compile Include="MinMaxTest.cs" />
     <Compile Include="BinarySearchTest.cs" />

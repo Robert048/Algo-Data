@@ -43,6 +43,7 @@ namespace inf2cConsole
 
             // Hashing
             BucketHashTest bucketHashTest = new BucketHashTest();
+            LinearHashTest linearHashTest = new LinearHashTest();
 
             timing.Stop();
             Console.WriteLine("TIMER TIME: " + timing.Duration);
