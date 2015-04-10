@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    //http://www.codeproject.com/Articles/2635/High-Performance-Timer-in-C
     public class Timing
     {       
         [DllImport("Kernel32.dll")]
