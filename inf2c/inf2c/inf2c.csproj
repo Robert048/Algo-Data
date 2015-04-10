@@ -43,6 +43,7 @@
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="BucketHash.cs" />
+    <Compile Include="CircularyLinkedList.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
     <Compile Include="DoublyLinkedList.cs" />
