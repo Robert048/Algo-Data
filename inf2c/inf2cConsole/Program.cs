@@ -45,6 +45,9 @@ namespace inf2cConsole
             BucketHashTest bucketHashTest = new BucketHashTest();
             LinearHashTest linearHashTest = new LinearHashTest();
 
+            // Doubly!
+            DoublyLinkedListTest doublyLinkedListTest = new DoublyLinkedListTest();
+
             timing.Stop();
             Console.WriteLine("TIMER TIME: " + timing.Duration);
 
