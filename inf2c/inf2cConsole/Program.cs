@@ -44,6 +44,7 @@ namespace inf2cConsole
             // Hashing
             BucketHashTest bucketHashTest = new BucketHashTest();
             LinearHashTest linearHashTest = new LinearHashTest();
+            QuadraticHashTest quadraticHashTest = new QuadraticHashTest();
 
             // Doubly!
             DoublyLinkedListTest doublyLinkedListTest = new DoublyLinkedListTest();
