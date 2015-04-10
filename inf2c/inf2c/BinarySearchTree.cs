@@ -20,21 +20,27 @@ namespace inf2c
             NodeBin<T> successorParent = delNode;
             NodeBin<T> successor = delNode;
             NodeBin<T> current = delNode.Right;
+
             while (!(current == null))
             {
-                successorParent = current; successor = current; current = current.Left;
-            } if (!(successor == delNode.Right))
+                successorParent = current;
+                successor = current;
+                current = current.Left;
+            }
+            if (!(successor == delNode.Right))
             {
-                successorParent.Left = successor.Right; successor.Right = delNode.Right;
-            } return successor;
+                successorParent.Left = successor.Right;
+                successor.Right = delNode.Right;
+            }
+            return successor;
         }
 
         public NodeBin<T> Find(int key)
         {
             NodeBin<T> current = root;
-            while (current.Data.CompareTo(key) > 0 || current.Data.CompareTo(key) < 0)
+            while (current.Data.CompareTo(key) == -1 || current.Data.CompareTo(key) == 1)
             {
-                if (key.CompareTo(current.Data) < 0)
+                if (key.CompareTo(current.Data) == -1)
                     current = current.Left;
                 else
                 {
@@ -45,60 +51,26 @@ namespace inf2c
             } return current;
         }
 
-        public bool Delete(int key)
+        public bool Delete(T value)
         {
-            NodeBin<T> current = root;
-            NodeBin<T> parent = root;
-            bool isLeftChild = true;
-            while (current.Data.CompareTo(key) > 0 || current.Data.CompareTo(key) < 0)
-            {
-                parent = current;
-                if (key.CompareTo(current.Data) < 0)
-                {
-                    isLeftChild = true;
-                    current = current.Right;
-                }
-                else
-                {
-                    isLeftChild = false;
-                    current = current.Right;
-                }
-                if (current == null)
-                    return false;
-            } 
-            if ((current.Left == null) && (current.Right == null)) if (current == root)
-                    root = null;
-                else if (isLeftChild)
-                    parent.Left = null;
-                else
-                    parent.Right = null;
-            else if (current.Right == null)
-                if (current == root)
-                    root = current.Left;
-                else if (isLeftChild)
-                    parent.Left = current.Left;
-                else
-                    parent.Right = current.Right;
-            else if (current.Left == null)
-                if (current == root)
-                    root = current.Right;
-                else if (isLeftChild)
-                    parent.Left = parent.Right;
-                else
-                    parent.Right = current.Right;
+            if (root == null)
+                return false;
             else
             {
-                NodeBin<T> successor = GetSuccessor(current);
-                if (current == root)
-                    root = successor;
-                else if (isLeftChild)
-                    parent.Left = successor;
-
+                if (root.Data.CompareTo(value) == 0)
+                {
+                    NodeBin<T> auxRoot = new NodeBin<T>();
+                    auxRoot.Left = root;
+                    bool result = root.remove(value, auxRoot);
+                    root = auxRoot.Left;
+                    auxRoot.Left = root;
+                    return result;
+                }
                 else
-                    parent.Right = successor;
-                successor.Left = current.Left;
+                {
+                    return root.remove(value, null);
+                }
             }
-            return true;
         }
 
         public T FindMin()
@@ -137,13 +109,13 @@ namespace inf2c
             }
         }
 
-        public void PostOrder(NodeBin<T> theRoot)
+        public void PostOrder(NodeBin<T> root)
         {
-            if (!(theRoot == null))
+            if (!(root == null))
             {
-                PostOrder(theRoot.Left);
-                PostOrder(theRoot.Right);
-                theRoot.DisplayNode();
+                PostOrder(root.Left);
+                PostOrder(root.Right);
+                root.DisplayNode();
             }
         }
 
@@ -189,7 +161,6 @@ namespace inf2c
 
         public void Output()
         {
-
         }
     }
 }

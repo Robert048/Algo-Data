@@ -20,25 +20,24 @@ namespace inf2cConsole
             nums.Insert(99);
             nums.Insert(22);
 
-            Console.Write("[BinarySearchTree(PreOrder traversal):]");
+            nums.Delete(3);
+
+            Console.Write("[BinarySearchTree(PreOrder traversal):] ");
             nums.preOrder(nums.root);
             Console.WriteLine(" ");
 
-            Console.Write("[BinarySearchTree(InOrder traversal):]");
+            Console.Write("[BinarySearchTree(InOrder traversal):] ");
             nums.InOrder(nums.root);
             Console.WriteLine(" ");
 
-            Console.Write("[BinarySearchTree(PostOrder traversal):]");
-            nums.PostOrder(nums.root);
-            Console.WriteLine(" ");
-
-            Console.Write("[BinarySearchTree(Find Min number):]");
+            Console.Write("[BinarySearchTree(Find Min number):] ");
             Console.WriteLine(nums.FindMin());
 
-            Console.Write("[BinarySearchTree(Find Max number):]");
+            Console.Write("[BinarySearchTree(Find Max number):] ");
             Console.WriteLine(nums.FindMax());
 
-            
+            Console.Write("[BinarySearchTree(Output):]");
+            nums.InOrder(null);
         }
     }
 }
