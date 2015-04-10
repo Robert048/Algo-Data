@@ -49,6 +49,9 @@ namespace inf2cConsole
             // Doubly!
             DoublyLinkedListTest doublyLinkedListTest = new DoublyLinkedListTest();
 
+            // Circulary!
+            CircularyTest circularyTest = new CircularyTest();
+
             timing.Stop();
             Console.WriteLine("TIMER TIME: " + timing.Duration);
 
