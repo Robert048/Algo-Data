@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
+    /// <summary>
+    /// Linear key hash: i = (i + j) % SIZE - j = 1
+    /// </summary>
+    /// <typeparam name="TKey">The type of the key.</typeparam>
+    /// <typeparam name="TValue">The type of the value.</typeparam>
     public class LinearHash<TKey, TValue>
     {
         private int mMaxSize;
