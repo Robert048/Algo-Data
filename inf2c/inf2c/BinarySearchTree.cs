@@ -15,12 +15,19 @@ namespace inf2c
             root = null;
         }
 
-        public NodeBin<T> GetSuccessor(NodeBin<T> delNode) { NodeBin<T> successorParent = delNode;
-NodeBin<T> successor = delNode;
-NodeBin<T> current = delNode.Right;
-while (!(current == null)) { successorParent = current; successor = current; current = current.Left;
-}if (!(successor == delNode.Right)) { successorParent.Left = successor.Right; successor.Right = delNode.Right;
-}return successor; }
+        public NodeBin<T> GetSuccessor(NodeBin<T> delNode)
+        {
+            NodeBin<T> successorParent = delNode;
+            NodeBin<T> successor = delNode;
+            NodeBin<T> current = delNode.Right;
+            while (!(current == null))
+            {
+                successorParent = current; successor = current; current = current.Left;
+            } if (!(successor == delNode.Right))
+            {
+                successorParent.Left = successor.Right; successor.Right = delNode.Right;
+            } return successor;
+        }
 
         public NodeBin<T> Find(int key)
         {
@@ -42,48 +49,57 @@ while (!(current == null)) { successorParent = current; successor = current; cur
         {
             NodeBin<T> current = root;
             NodeBin<T> parent = root;
-             bool isLeftChild = true;
-while (current.Data != key) { parent = current;
-if (key < current.Data) {
-       isLeftChild = true;
-current = current.Right; } else {
-       isLeftChild = false;
-       current = current.Right;
-}
-    if (current == null)
-           return false;
-    }if ((current.Left == null) && (current.Right == null)) if (current == root)
-        root = null;
-     else if (isLeftChild)
-        parent.Left = null;
-     else
-        parent.Right = null;
-else if (current.Right == null)
-     if (current == root)
-        root = current.Left;
-     else if (isLeftChild)
-      parent.Left = current.Left;
-     else
-        parent.Right = current.Right;
-else if (current.Left == null)
-     if (current == root)
-        root = current.Right;
-     else if (isLeftChild)
-        parent.Left = parent.Right;
-     else
-        parent.Right = current.Right;
- else{
-        NodeBin<T> successor = GetSuccessor(current);
-      if (current == root)
-                  root = successor;
-         else if (isLeftChild)
-            parent.Left = successor;
+            bool isLeftChild = true;
+            while (current.Data != key)
+            {
+                parent = current;
+                if (key < current.Data)
+                {
+                    isLeftChild = true;
+                    current = current.Right;
+                }
+                else
+                {
+                    isLeftChild = false;
+                    current = current.Right;
+                }
+                if (current == null)
+                    return false;
+            } 
+            if ((current.Left == null) && (current.Right == null)) if (current == root)
+                    root = null;
+                else if (isLeftChild)
+                    parent.Left = null;
+                else
+                    parent.Right = null;
+            else if (current.Right == null)
+                if (current == root)
+                    root = current.Left;
+                else if (isLeftChild)
+                    parent.Left = current.Left;
+                else
+                    parent.Right = current.Right;
+            else if (current.Left == null)
+                if (current == root)
+                    root = current.Right;
+                else if (isLeftChild)
+                    parent.Left = parent.Right;
+                else
+                    parent.Right = current.Right;
+            else
+            {
+                NodeBin<T> successor = GetSuccessor(current);
+                if (current == root)
+                    root = successor;
+                else if (isLeftChild)
+                    parent.Left = successor;
 
-         else
-            parent.Right = successor;
-         successor.Left = current.Left;
-}
-        return true; }
+                else
+                    parent.Right = successor;
+                successor.Left = current.Left;
+            }
+            return true;
+        }
         //    bool isLeftChild = true;
         //    while (current.Data != key)
         //    {
