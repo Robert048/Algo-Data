@@ -19,7 +19,7 @@ namespace inf2c
         public CircularyLinkedList()
         {
             count = 0;
-            
+
             header = new GenericNode<T>();
             header.Next = header;
         }
@@ -84,7 +84,7 @@ namespace inf2c
         public void Remove(T n)
         {
             GenericNode<T> current = FindPrevious(n);
-            if(!(current.Next == null))
+            if (!(current.Next == null))
             {
                 current.Next = current.Next.Next;
                 count--;
