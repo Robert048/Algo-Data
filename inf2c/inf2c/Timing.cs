@@ -12,7 +12,7 @@ namespace inf2c
 {
     //http://www.codeproject.com/Articles/2635/High-Performance-Timer-in-C
     public class Timing
-    {
+    {       
         [DllImport("Kernel32.dll")]
         private static extern bool QueryPerformanceCounter(
             out long lpPerformanceCount);
@@ -26,7 +26,10 @@ namespace inf2c
         private long frequence;
 
         private object _lock = new object();
-
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Timing"/> class.
+        /// </summary>
         public Timing()
         {
             startTime = 0;
@@ -39,7 +42,10 @@ namespace inf2c
                 throw new Win32Exception();
             }
         }
-
+        
+        /// <summary>
+        /// Starts the timer.
+        /// </summary>
         public void Start()
         {
             lock (_lock)
@@ -47,7 +53,10 @@ namespace inf2c
                 QueryPerformanceCounter(out startTime);
             }
         }
-
+        
+        /// <summary>
+        /// Stops the timer.
+        /// </summary>
         public void Stop()
         {
             lock (_lock)
@@ -56,6 +65,12 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Gets the duration in seconds.
+        /// </summary>
+        /// <value>
+        /// The duration.
+        /// </value>
         public double Duration
         {
             get

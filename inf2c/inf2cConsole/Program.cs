@@ -21,7 +21,6 @@ namespace inf2cConsole
             inf2c.Timing timing = new inf2c.Timing();
             timing.Start();
 
-
             //Sorting
             InsertionSortTest insertionSort = new InsertionSortTest();
             BubbleSortTest bubbleSort = new BubbleSortTest();
@@ -50,7 +49,7 @@ namespace inf2cConsole
             DoublyLinkedListTest doublyLinkedListTest = new DoublyLinkedListTest();
 
             timing.Stop();
-            Console.WriteLine("TIMER TIME: " + timing.Duration);
+            Console.WriteLine("TIMER TIME: " + timing.Duration + " seconds");
 
             // dont close the console
             Console.ReadLine();

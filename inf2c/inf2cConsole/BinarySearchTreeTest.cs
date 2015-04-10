@@ -38,16 +38,7 @@ namespace inf2cConsole
             Console.Write("[BinarySearchTree(Find Max number):]");
             Console.WriteLine(nums.FindMax());
 
-          //  Console.Write("[BinarySearchTree(Find Max number):]");
-          //  Console.WriteLine(nums.Find(3));
-
-            nums.Delete(3);
-
-            Console.WriteLine("ok");
-
-            Console.WriteLine(nums.FindMin());
-
-
+            
         }
     }
 }

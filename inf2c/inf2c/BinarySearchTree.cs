@@ -32,9 +32,9 @@ namespace inf2c
         public NodeBin<T> Find(int key)
         {
             NodeBin<T> current = root;
-            while (current.Data != key)
+            while (current.Data.CompareTo(key) > 0 || current.Data.CompareTo(key) < 0)
             {
-                if (key < current.Data)
+                if (key.CompareTo(current.Data) < 0)
                     current = current.Left;
                 else
                 {
@@ -50,10 +50,10 @@ namespace inf2c
             NodeBin<T> current = root;
             NodeBin<T> parent = root;
             bool isLeftChild = true;
-            while (current.Data != key)
+            while (current.Data.CompareTo(key) > 0 || current.Data.CompareTo(key) < 0)
             {
                 parent = current;
-                if (key < current.Data)
+                if (key.CompareTo(current.Data) < 0)
                 {
                     isLeftChild = true;
                     current = current.Right;
@@ -100,44 +100,8 @@ namespace inf2c
             }
             return true;
         }
-        //    bool isLeftChild = true;
-        //    while (current.Data != key)
-        //    {
-        //        parent = current;
-        //        if (key < current.Data)
-        //        {
-        //            isLeftChild = true;
-        //            current = current.Right;
-        //        }
-        //        else
-        //        {
-        //            isLeftChild = false;
-        //            current = current.Right;
-        //        }
-        //        if (current == null)
-        //            return false;
-        //    }
-        //    if ((current.Left == null) & (current.Right == null))
-        //    {
-        //        if (current == root)
 
-        //            root = null;
-        //        else if (isLeftChild)
-        //            parent.Left = null;
-        //        else
-        //            parent.Right = null;
-        //    }
-        //    return true;
-        //}
-        
-                
-            
-        
-
-     // the rest of the class goes here
-
-
-        public int FindMin()
+        public T FindMin()
         {
             NodeBin<T> current = root;
             while (!(current.Left == null))
@@ -145,7 +109,7 @@ namespace inf2c
             return current.Data;
         }
 
-        public int FindMax()
+        public T FindMax()
         {
             NodeBin<T> current = root;
             while (!(current.Right == null))
@@ -183,14 +147,13 @@ namespace inf2c
             }
         }
 
-        public void Insert(int i)
+        public void Insert(T value)
         {
             NodeBin<T> newNode = new NodeBin<T>();
-            newNode.Data = i;
+            newNode.Data = value;
+
             if (root == null)
-            
-                root = newNode;
-            
+                root = newNode;       
             else
             {
                 NodeBin<T> current = root;
@@ -198,7 +161,7 @@ namespace inf2c
                 while (true)
                 {
                     parent = current;
-                    if (i < current.Data)
+                    if (value.CompareTo(current.Data) < 0)
                     {
                         current = current.Left;
                         if (current == null)
@@ -219,10 +182,14 @@ namespace inf2c
                             parent.Right = newNode;
                             break;
                         }
-
                     }
                 }
             }
+        }
+
+        public void Output()
+        {
+
         }
     }
 }
