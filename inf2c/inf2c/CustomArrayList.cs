@@ -62,8 +62,13 @@ namespace inf2c
             items = new T[mMaxSize];
         }
 
+        /// <summary>
+        /// Adds the specified item to the arraylist
+        /// </summary>
+        /// <param name="item">The item to add</param>
         public void Add(T item)
         {
+            // if there is no item on this position
             if (items[temp_index] == null)
             {
                 items[temp_index] = item;
@@ -71,10 +76,16 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Adds the range to the arraylist
+        /// </summary>
+        /// <param name="range">The range.</param>
         public void AddRange(List<T> range)
         {
+            // loop through the range
             foreach (T item in range)
             {
+                // if there is no item on this position
                 if (items[temp_index] == null)
                 {
                     items[temp_index] = item;
@@ -83,21 +94,40 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Determines whether the arraylist contains the item
+        /// </summary>
+        /// <param name="item">The item to check.</param>
+        /// <returns></returns>
         public bool Contains(T item)
         {
             return items.Contains(item);
         }
 
+        /// <summary>
+        /// Inserts the item at a specific index
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="at">At.</param>
         public void Insert(T item, int at)
         {
             items[at] = item;
         }
 
+        /// <summary>
+        /// Copies an array to new index
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="index">The index.</param>
         public void CopyTo(Array array, int index)
         {
             items.CopyTo(array, index);
         }
 
+        /// <summary>
+        /// Gets the enumerator.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator GetEnumerator()
         {
             return items.GetEnumerator();
