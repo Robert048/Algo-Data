@@ -92,6 +92,23 @@ namespace inf2c
             }
         }
 
+        public void InsertFirst(GenericNodeDLL<T> newItem)
+        {
+            GenericNodeDLL<T> n = newItem;
+            n.Flink = null;
+
+            if (last == null)
+            {
+                header = n;
+                last = n;
+            }
+            else
+            {
+                last.Flink = n;
+                last = n;
+            }
+        }
+
         public void InsertLast(T newItem)
         {
             GenericNodeDLL<T> n = new GenericNodeDLL<T>();
@@ -129,7 +146,7 @@ namespace inf2c
 
             while (current != null)
             {
-                Console.WriteLine("[LinkedListTest] " + current.Element);
+                Console.WriteLine("[DoublyLinkedListTest] " + current.Element);
                 current = current.Flink;
             }
         }
@@ -140,7 +157,7 @@ namespace inf2c
             current = FindLast();
             while (!(current.Blink == null))
             {
-                Console.WriteLine(current.Element);
+                Console.WriteLine("[DoublyLinkedListTest] " + current.Element);
                 current = current.Blink;
             }
         }
