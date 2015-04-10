@@ -12,6 +12,9 @@ namespace inf2c
         public NodeBin<T> Left;
         public NodeBin<T> Right;
 
+        /// <summary>
+        /// Create nodebin
+        /// </summary>
         public NodeBin()
         {
             Data = default(T);
@@ -19,6 +22,12 @@ namespace inf2c
             Right = null;
         }
 
+        /// <summary>
+        /// Remove node 
+        /// </summary>
+        /// <param name="value">Value of node</param>
+        /// <param name="parent">Tree</param>
+        /// <returns>true or false</returns>
         public bool remove(T value, NodeBin<T> parent)
         {
             if (value.CompareTo(Data) < 0)
@@ -54,6 +63,10 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Finding min node
+        /// </summary>
+        /// <returns>min node</returns>
         public T minValue()
         {
             if (Left == null)
@@ -62,7 +75,9 @@ namespace inf2c
                 return Left.minValue();
         }
 
-
+        /// <summary>
+        /// Displaying node(s) in console 
+        /// </summary>
         public void DisplayNode()
         {
             Console.Write(Data + " ");

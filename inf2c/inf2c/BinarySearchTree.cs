@@ -15,6 +15,11 @@ namespace inf2c
             root = null;
         }
 
+        /// <summary>
+        /// Using binarysearchtree
+        /// </summary>
+        /// <param name="delNode">Parent node</param>
+        /// <returns>New node</returns>
         public NodeBin<T> GetSuccessor(NodeBin<T> delNode)
         {
             NodeBin<T> successorParent = delNode;
@@ -35,6 +40,11 @@ namespace inf2c
             return successor;
         }
 
+        /// <summary> 
+        /// Finding node in binarysearchtree
+        /// </summary>
+        /// <param name="key">Value that has to be found</param>
+        /// <returns>found value</returns>
         public NodeBin<T> Find(int key)
         {
             NodeBin<T> current = root;
@@ -51,6 +61,11 @@ namespace inf2c
             } return current;
         }
 
+        /// <summary>
+        /// Delete node
+        /// </summary>
+        /// <param name="value">Delete node with this value</param>
+        /// <returns>true or false</returns>
         public bool Delete(T value)
         {
             if (root == null)
@@ -73,6 +88,10 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Finds node with smallest number
+        /// </summary>
+        /// <returns>smallest number node</returns>
         public T FindMin()
         {
             NodeBin<T> current = root;
@@ -81,6 +100,10 @@ namespace inf2c
             return current.Data;
         }
 
+        /// <summary>
+        /// Finds node with max number
+        /// </summary>
+        /// <returns>largest number node</returns>
         public T FindMax()
         {
             NodeBin<T> current = root;
@@ -89,6 +112,10 @@ namespace inf2c
             return current.Data;
         }
 
+        /// <summary>
+        /// Sort inorder
+        /// </summary>
+        /// <param name="theRoot">nodes</param>
         public void InOrder(NodeBin<T> theRoot)
         {
             if (!(theRoot == null))
@@ -99,6 +126,10 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Sort preorder
+        /// </summary>
+        /// <param name="theRoot">nodes</param>
         public void preOrder(NodeBin<T> theRoot)
         {
             if (!(theRoot == null))
@@ -109,6 +140,10 @@ namespace inf2c
             }
         }
 
+        /// <summary>
+        /// Sort postorder
+        /// </summary>
+        /// <param name="root">nodes</param>
         public void PostOrder(NodeBin<T> root)
         {
             if (!(root == null))
@@ -118,7 +153,11 @@ namespace inf2c
                 root.DisplayNode();
             }
         }
-
+        
+        /// <summary>
+        /// Insert node
+        /// </summary>
+        /// <param name="value">inserted node</param>
         public void Insert(T value)
         {
             NodeBin<T> newNode = new NodeBin<T>();
@@ -141,10 +180,6 @@ namespace inf2c
                             parent.Left = newNode;
                             break;
                         }
-                        //else
-                        //{
-                        //    current = current.left;
-                        //}
                     }
                     else
                     {
@@ -157,10 +192,6 @@ namespace inf2c
                     }
                 }
             }
-        }
-
-        public void Output()
-        {
         }
     }
 }
