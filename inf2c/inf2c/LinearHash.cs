@@ -22,6 +22,8 @@ namespace inf2c
         public LinearHash(int size)
         {
             mMaxSize = size;
+            mCurrentSize = 0;
+
             Keys = new TKey[size];
             Values = new TValue[size];
         }
@@ -32,6 +34,7 @@ namespace inf2c
         public void Clear()
         {
             mCurrentSize = 0;
+
             Keys = new TKey[mMaxSize];
             Values = new TValue[mMaxSize];
         }
@@ -108,30 +111,32 @@ namespace inf2c
         /// <param name="val">The value.</param>
         public void Insert(TKey key, TValue val)
         {
-            int tmp = Hash(key);
-            int i = tmp;
+            int tmpHash = Hash(key);
+            int i = tmpHash;
 
             do
             {
                 // check if there the position is null
-                if (Keys.ElementAt(i) == null)
+                if (Keys[i] != null)
                 {
                     // insert the key and value
                     Keys[i] = key;
                     Values[i] = val;
+
                     // increment the current size
                     mCurrentSize++;
                     return;
                 }
                 // Check if the key already exists
-                if (Keys.ElementAt(i).Equals(key))
+                if (Keys[i].Equals(key))
                 {
                     // override the old value
                     Values[i] = val;
                     return;
                 }
+
                 i = (i + 1) % mMaxSize;
-            } while (i != tmp);
+            } while (i != tmpHash);
         }
 
         public void Remove(TKey key)
@@ -145,7 +150,7 @@ namespace inf2c
             int i = Hash(key);
 
             // Find the position of the key and delete it
-            while (!Keys.Equals(Keys.ElementAt(i)))
+            while (!key.Equals(Keys[i]))
             {
                 i = (i + 1) % mMaxSize;
             }
@@ -155,11 +160,13 @@ namespace inf2c
             Values[i] = default(TValue);
 
             // renew all the key hashes
-            for (i = (i + 1) % mMaxSize; Keys.ElementAt(i) != null; i = (i+1) % mMaxSize)
+            foreach (TKey mKey in Keys)
             {
+                i = (i + 1) % mMaxSize;
+
                 // store the key and value temponary
-                TKey tmpKey = Keys.ElementAt(i);
-                TValue tmpValue = Values.ElementAt(i);
+                TKey tmpKey = Keys[i];
+                TValue tmpValue = Values[i];
 
                 // reset the key and value
                 Keys[i] = default(TKey);
@@ -170,6 +177,7 @@ namespace inf2c
                 // Insert the temp key and value
                 Insert(tmpKey, tmpValue);
             }
+
             // decrement the removed item
             mCurrentSize--;
         }
@@ -181,7 +189,7 @@ namespace inf2c
         {
             for (int i = 0; i < mMaxSize; i++)
             {
-                if (Keys.ElementAt(i) != null)
+                if (Keys[i] != null && Values[i] != null)
                 {
                     Console.WriteLine("[LinearHashTest] " + Keys.ElementAt(i) + " : " + Values.ElementAt(i));
                 }

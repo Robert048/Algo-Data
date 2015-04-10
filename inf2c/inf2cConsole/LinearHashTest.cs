@@ -12,7 +12,7 @@ namespace inf2cConsole
     {
         public LinearHashTest()
         {
-            LinearHash<int, string> linearHash = new LinearHash<int, string>(3);
+            LinearHash<int, string> linearHash = new LinearHash<int, string>(4);
             linearHash.Insert(1, "Piet");
             linearHash.Insert(2, "Paul");
             KeyValuePair<int, string> pair = new KeyValuePair<int, string>(3, "Richard");
@@ -21,7 +21,6 @@ namespace inf2cConsole
             linearHash.Remove(2);
 
             Console.WriteLine("[LinearHashTest] There are {0} items.", linearHash.Size);
-
             linearHash.Output();
         }
     }
