@@ -26,12 +26,7 @@ namespace inf2cConsole
             Console.WriteLine("[CircularyLinkedList] Zoek naar element 0 : " + names.Search(0).Element);
             Console.WriteLine("[CircularyLinkedList] Zoek naar element 1 : " + names.Search(1).Element);
             Console.WriteLine("[CircularyLinkedList] Zoek naar element 7 : " + names.Search(7).Element);
-         
-  
-      
- 
-
-            Console.ReadLine();
+       
                
         }       
      }
