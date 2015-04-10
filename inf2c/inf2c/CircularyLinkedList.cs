@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace inf2c
 {
-    class CircularyLinkedList<T> where T : IComparable
+    public class CircularyLinkedList<T> where T : IComparable
     {
         //fields
-        protected GenericNode<T> current;
-        protected GenericNode<T> header;
+        public GenericNode<T> current;
+        public GenericNode<T> header;
         private int count;
 
         /// <summary>
@@ -19,6 +19,7 @@ namespace inf2c
         public CircularyLinkedList()
         {
             count = 0;
+            
             header = new GenericNode<T>();
             header.Next = header;
         }
@@ -38,9 +39,9 @@ namespace inf2c
         {
             GenericNode<T> current = new GenericNode<T>();
             current = header;
-            while (!(current.Next.Element.ToString() == "header"))
+            while (current.Next.Element != null && !(current.Next.Element.ToString() == "header"))
             {
-                Console.WriteLine(current.Next.Element);
+                Console.WriteLine("[CircularyLinkedList] " + current.Next.Element);
                 current = current.Next;
             }
         }
@@ -69,7 +70,7 @@ namespace inf2c
         {
             GenericNode<T> current = new GenericNode<T>();
             current = header.Next;
-            while (current.Element.CompareTo(n) == 0)
+            while ((current.Next == null) && current.Element.CompareTo(n) == 0)
             {
                 current = current.Next;
             }
